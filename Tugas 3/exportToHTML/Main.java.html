@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">class </span><span class="s1">Tugas3 </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">day</span><span class="s2">, </span><span class="s1">month</span><span class="s2">;</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Masukkan tanggal lahir (contoh: 13 4 untuk tanggal 13 April): &quot;</span><span class="s2">);</span>
+        <span class="s1">day </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">month </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+
+        <span class="s1">String zodiacSign </span><span class="s2">= </span><span class="s1">determineZodiacSign</span><span class="s2">(</span><span class="s1">day</span><span class="s2">, </span><span class="s1">month</span><span class="s2">);</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">zodiacSign </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Zodiak Anda adalah: &quot; </span><span class="s2">+ </span><span class="s1">zodiacSign</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Tanggal lahir tidak valid.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s1">scanner</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static </span><span class="s1">String determineZodiacSign</span><span class="s2">(</span><span class="s0">int </span><span class="s1">day</span><span class="s2">, </span><span class="s0">int </span><span class="s1">month</span><span class="s2">) {</span>
+        <span class="s1">String</span><span class="s2">[] </span><span class="s1">zodiacSigns </span><span class="s2">= {</span>
+                <span class="s3">&quot;Capricorn&quot;</span><span class="s2">, </span><span class="s3">&quot;Aquarius&quot;</span><span class="s2">, </span><span class="s3">&quot;Pisces&quot;</span><span class="s2">, </span><span class="s3">&quot;Aries&quot;</span><span class="s2">, </span><span class="s3">&quot;Taurus&quot;</span><span class="s2">, </span><span class="s3">&quot;Gemini&quot;</span><span class="s2">,</span>
+                <span class="s3">&quot;Cancer&quot;</span><span class="s2">, </span><span class="s3">&quot;Leo&quot;</span><span class="s2">, </span><span class="s3">&quot;Virgo&quot;</span><span class="s2">, </span><span class="s3">&quot;Libra&quot;</span><span class="s2">, </span><span class="s3">&quot;Scorpio&quot;</span><span class="s2">, </span><span class="s3">&quot;Sagittarius&quot;</span>
+        <span class="s2">};</span>
+
+        <span class="s0">int</span><span class="s2">[] </span><span class="s1">endDayOfSigns </span><span class="s2">= { </span><span class="s4">20</span><span class="s2">, </span><span class="s4">19</span><span class="s2">, </span><span class="s4">20</span><span class="s2">, </span><span class="s4">19</span><span class="s2">, </span><span class="s4">20</span><span class="s2">, </span><span class="s4">20</span><span class="s2">, </span><span class="s4">22</span><span class="s2">, </span><span class="s4">22</span><span class="s2">, </span><span class="s4">22</span><span class="s2">, </span><span class="s4">22</span><span class="s2">, </span><span class="s4">21</span><span class="s2">, </span><span class="s4">21 </span><span class="s2">};</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">month </span><span class="s2">&gt;= </span><span class="s4">1 </span><span class="s2">&amp;&amp; </span><span class="s1">month </span><span class="s2">&lt;= </span><span class="s4">12 </span><span class="s2">&amp;&amp; </span><span class="s1">day </span><span class="s2">&gt;= </span><span class="s4">1 </span><span class="s2">&amp;&amp; </span><span class="s1">day </span><span class="s2">&lt;= </span><span class="s4">31</span><span class="s2">) {</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">day </span><span class="s2">&lt;= </span><span class="s1">endDayOfSigns</span><span class="s2">[</span><span class="s1">month </span><span class="s2">- </span><span class="s4">1</span><span class="s2">]) {</span>
+                <span class="s0">return </span><span class="s1">zodiacSigns</span><span class="s2">[</span><span class="s1">month </span><span class="s2">- </span><span class="s4">1</span><span class="s2">];</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s0">return </span><span class="s1">zodiacSigns</span><span class="s2">[</span><span class="s1">month </span><span class="s2">% </span><span class="s4">12</span><span class="s2">];</span>
+            <span class="s2">}</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">return null</span><span class="s2">; </span><span class="s5">// Tanggal lahir tidak valid</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
